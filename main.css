@@ -9,6 +9,10 @@ main {
     padding: 35px;
 }
 
+h2 {
+    text-transform: capitalize;
+}
+
 pre {
     white-space: pre-wrap;
     text-align: center;

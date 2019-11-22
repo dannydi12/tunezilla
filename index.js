@@ -4,28 +4,28 @@ function printLyrics(lyrics, artist, song) {
 
 function printInfo(info) {
     $('.js-info').html(`
-    <button class="js-exit">X</button>
+    <button class="js-exit exit">X</button>
     <img src="${info.strTrackThumb}">
     <h3>${info.strAlbum}</h3>
     <pre>${info.strDescriptionEN}</pre>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/${formatLink(info.strMusicVid)}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe class="video" src="https://www.youtube.com/embed/${getURI(info.strMusicVid)}" frameborder="0" allowfullscreen></iframe>
     <p>Directed by: ${info.strMusicVidDirector}</p>
     <p>Genre: ${info.strStyle}</p>
     `);
 }
 
 function showInfo() {
-    if($('.js-modal').css( "display" ) == 'none') {
+    if ($('.js-modal').css("display") == 'none') {
         $('.js-modal').css('display', 'block');
     }
     else {
         $('.js-modal').css('display', 'none');
     }
-    
 }
 
-function formatLink(link) {
-    return link.slice(31);
+function getURI(link) {
+    let index = link.indexOf('=')
+    return link.slice(index + 1);
 }
 
 function formatSearch(query) {
@@ -52,7 +52,7 @@ function fetchLyrics(artist, song) {
             printLyrics(jsonLyrics, artist, song);
         })
         .catch(error => {
-            alert('Something went wrong...');
+            $('.js-lyrics').html(`<p>The lyrics for this song cannot be found at this time. Please try again later or check your spelling</p>`);
         });
 }
 
@@ -65,9 +65,20 @@ function fetchSongDetails(artist, song) {
     let queries = formatDataSearch(params);
     const url = `https://theaudiodb.com/api/v1/json/1/searchtrack.php?${queries}`;
     fetch(url)
+        .then(request => {
+            if (request.ok) {
+                return request;
+            }
+            else {
+                throw new Error('Something isn\'t working');
+            }
+        })
         .then(info => info.json())
         .then(jsonInfo => {
             printInfo(jsonInfo.track[0]);
+        })
+        .catch(error => {
+            $('.js-info').html(`<button class="js-exit exit">X</button><p>Song details cannot be found at this time.</p>`);
         });
 }
 
