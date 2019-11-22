@@ -6,44 +6,9 @@ function formatDataSearch(params) {
     return Object.keys(params).map(key => `${key.trim().replace(/ /g, '_').toLowerCase()}=${(params[key]).trim().replace(/ /g, '_').toLowerCase()}`).join('&');
 }
 
-
-// function fetchSpotifySongs(artists) {
-//     let params = {
-//         q: 'queen',
-//         limit: 1,
-//         type: 'artist',
-//     }
-
-
-
-//     let queries = formatParams(params);
-//     const url = `https://api.spotify.com/v1/search?${queries}`;
-
-//     console.log(url);
-
-
-//     fetch(url, {headers: {
-//         'Authorization': 'BQCsHMHGwa4J_Sz27nf-GPHr-3ZTRHci6S8njfJSTj9aa6xwJxxfOMm9F-RW82E9MbiG5EfNGV6Q-alNCkU'
-//     }})
-//     .then(request => {
-//         if(request.ok) {
-//             return request;
-//         }
-//         else {
-//             throw new Error('Something isn\'t working');
-//         }
-//     })
-//     .then(artists => artists.json())
-//     .then(jsonArtists => {
-//         console.log(jsonArtists);
-//     })
-//     .catch(error => {
-//         alert('Something went wrong...');
-//     });
-// }
 function printLyrics(lyrics) {
     console.log(lyrics);
-    $('.js-results').html(`<pre>${lyrics.lyrics}</pre>`);
+    $('.js-lyrics').html(`<pre>${lyrics.lyrics}</pre>`);
 }
 
 function fetchLyrics(artist, song) {
@@ -99,8 +64,6 @@ function handleSearch() {
 
 
 function main() {
-    // fetchLyrics('shawn mendes', 'stitches');
-    // fetchSongDetails('shawn mendes', 'stitches');
     handleSearch();
 }
 
