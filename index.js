@@ -1,5 +1,4 @@
 function printLyrics(lyrics, artist, song) {
-    console.log(lyrics);
     $('.js-lyrics').html(`<h2>${song} by ${artist}</h2><pre>${lyrics.lyrics}</pre>`);
 }
 
@@ -16,7 +15,6 @@ function printInfo(info) {
 }
 
 function showInfo() {
-    console.log('info');
     if($('.js-modal').css( "display" ) == 'none') {
         $('.js-modal').css('display', 'block');
     }
