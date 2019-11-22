@@ -1,16 +1,16 @@
 function printLyrics(lyrics, artist, song) {
-    $('.js-lyrics').html(`<h2>${song} by ${artist}</h2><pre>${lyrics.lyrics}</pre>`);
+    $('.js-lyrics').html(`<h2 class="song-title">${song} by ${artist}</h2><pre>${lyrics.lyrics}</pre>`);
 }
 
 function printInfo(info) {
     $('.js-info').html(`
     <button class="js-exit exit">X</button>
-    <img src="${info.strTrackThumb}">
+    <img class="album-image" src="${info.strTrackThumb}" alt="Album cover for song">
     <h3>${info.strAlbum}</h3>
+    <p>Genre: ${info.strStyle}</p>
     <pre>${info.strDescriptionEN}</pre>
     <iframe class="video" src="https://www.youtube.com/embed/${getURI(info.strMusicVid)}" frameborder="0" allowfullscreen></iframe>
     <p>Directed by: ${info.strMusicVidDirector}</p>
-    <p>Genre: ${info.strStyle}</p>
     `);
 }
 
