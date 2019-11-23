@@ -17,10 +17,17 @@ function printInfo(info) {
 function showInfo() {
     if ($('.js-modal').css("display") == 'none') {
         $('.js-modal').css('display', 'block');
+        $('.js-modal').css('position', 'fixed');
     }
     else {
         $('.js-modal').css('display', 'none');
     }
+}
+
+function scrollDown() {
+    $('html, body').animate({
+        scrollTop: $(".lyrics-section").offset().top
+    }, 1000);
 }
 
 function getURI(link) {
@@ -36,7 +43,7 @@ function formatDataSearch(params) {
     return Object.keys(params).map(key => `${key.trim().replace(/ /g, '_').toLowerCase()}=${(params[key]).trim().replace(/ /g, '_').toLowerCase()}`).join('&');
 }
 
-function fetchLyrics(artist, song) {
+function fetchLyrics(artist, song, callback) {
     const url = `https://api.lyrics.ovh/v1/${formatSearch(artist)}/${formatSearch(song)}`;
     fetch(url)
         .then(request => {
@@ -50,9 +57,11 @@ function fetchLyrics(artist, song) {
         .then(lyrics => lyrics.json())
         .then(jsonLyrics => {
             printLyrics(jsonLyrics, artist, song);
+            callback();
         })
         .catch(error => {
             $('.js-lyrics').html(`<p>The lyrics for this song cannot be found at this time. Please try again later or check your spelling</p>`);
+            callback();
         });
 }
 
@@ -90,7 +99,7 @@ function handleInfoClick() {
 }
 
 function handleExitClick() {
-    $('.js-info').on('click', function (event) {
+    $('.js-info').on('click','.js-exit', function (event) {
         event.preventDefault();
         showInfo();
     });
@@ -101,7 +110,7 @@ function handleSearch() {
         event.preventDefault();
         let artist = $('#artist').val();
         let song = $('#song').val();
-        fetchLyrics(artist, song);
+        fetchLyrics(artist, song, scrollDown);
         fetchSongDetails(artist, song);
     });
 }
@@ -111,8 +120,6 @@ function main() {
     handleSearch();
     handleExitClick();
     handleInfoClick();
-    fetchLyrics('queen', 'bohemian rhapsody');
-    fetchSongDetails('queen', 'bohemian rhapsody');
 }
 
 $(main);
