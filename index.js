@@ -1,6 +1,6 @@
 function printLyrics(lyrics, artist, song) {
     $('.js-lyrics').html(`
-    <button class="js-info-button info-button">&uarr; Learn More About This Song &uarr;</button>
+    <button class="js-info-button info-button animated fadeInUp">&uarr; Learn More About This Song &uarr;</button>
     <h2 class="song-title">${song} by ${artist}</h2><pre>${lyrics.lyrics}</pre>
     `);
 }

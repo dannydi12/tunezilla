@@ -5,15 +5,15 @@ body {
     font-family: 'Arimo', sans-serif;
     font-size: 20px;
     line-height: 30px;
-    padding: 35px;
 }
 
 main {
     display: flex;
     align-items: center;
     flex-direction: column;
-    /* background: url('images/music.svg'); */
+    background: url('images/pattern.svg');
     height: 100vh;
+    padding: 35px;
 }
 
 h1, h2 {
@@ -23,6 +23,7 @@ h1, h2 {
 
 .title {
     font-size: 70px;
+    color: #8e44ad;
 }
 
 /* Main styles */
@@ -62,6 +63,10 @@ input {
     width: 80%;
 }
 
+main > * {
+    background-color: white;
+}
+
 /* Sections */
 
 .search-section {
@@ -75,6 +80,7 @@ input {
 
 .lyrics-section {
     margin-top: 50px;
+    padding: 35px;
 }
 
 .modal {
@@ -89,6 +95,7 @@ input {
     background-color: white;
     padding: 35px;
     position: fixed;
+    padding: 35px;
 }
 
 .video {
@@ -122,7 +129,8 @@ input {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: grey;
+    background-color: #8e44ad;
+    color: white;
     height: 50px;
     border: none;
     font-size: inherit;
