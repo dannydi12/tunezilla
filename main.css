@@ -110,6 +110,12 @@ input {
     font-size: inherit;
 }
 
+.search-button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
 .info-button {
     display: block;
     position: fixed;
@@ -121,6 +127,7 @@ input {
     border: none;
     font-size: inherit;
     font-family: inherit;
+    cursor: pointer;
 }
 
 .exit-button {
@@ -130,6 +137,7 @@ input {
     font-family: inherit;
     margin-right: 0px;
     margin-left: auto;
+    cursor: pointer;
 }
 
 @media (min-width: 500px) {
