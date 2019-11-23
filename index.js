@@ -1,13 +1,12 @@
 function printLyrics(lyrics, artist, song) {
     $('.js-lyrics').html(`
-    <button class="js-info-button info-button"></button>
+    <button class="js-info-button info-button">&uarr; Learn More About This Song &uarr;</button>
     <h2 class="song-title">${song} by ${artist}</h2><pre>${lyrics.lyrics}</pre>
     `);
 }
 
 function printInfo(info) {
     $('.js-info').html(`
-    <button class="js-exit exit">X</button>
     <img class="album-image" src="${info.strTrackThumb}" alt="Album cover for song">
     <h3>${info.strAlbum}</h3>
     <p>Genre: ${info.strStyle}</p>
@@ -103,7 +102,7 @@ function handleInfoClick() {
 }
 
 function handleExitClick() {
-    $('.js-info').on('click','.js-exit', function (event) {
+    $('.js-modal').on('click','.js-exit', function (event) {
         event.preventDefault();
         showInfo();
     });

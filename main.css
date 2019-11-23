@@ -91,6 +91,12 @@ input {
     position: fixed;
 }
 
+.video {
+    height: 340px;
+    width: 100%;
+    max-width: 560px;
+}
+
 /* Buttons */
 
 .search-button {
@@ -103,4 +109,26 @@ input {
     border: 3px black solid;
     font-family: inherit;
     font-size: inherit;
+}
+
+.info-button {
+    display: block;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: grey;
+    height: 50px;
+    border: none;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.exit-button {
+    border: none;
+    display: block;
+    font-size: 50px;
+    font-family: inherit;
+    margin-right: 0px;
+    margin-left: auto;
 }
