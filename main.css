@@ -1,3 +1,5 @@
+/* Global styles */
+
 body {
     text-align: center;
     font-family: 'Arimo', sans-serif;
@@ -23,6 +25,14 @@ h1, h2 {
     font-size: 70px;
 }
 
+
+/* Main styles */
+
+.song-title {
+    font-size: 40px;
+    line-height: 45px;
+}
+
 pre {
     white-space: pre-wrap;
     text-align: center;
@@ -39,6 +49,21 @@ input {
     margin-top: 10px;
 }
 
+.modal pre {
+    text-align: left;
+}
+
+.modal > header, .modal > div {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.album-image {
+    width: 80%;
+}
+
+/* Sections */
+
 .search-section {
     margin-top: 20px;
     border: 3px black solid;
@@ -48,25 +73,8 @@ input {
     max-width: 700px;
 }
 
-.search-button {
-    display: block;
-    margin: 0 auto;
-    margin-top: 20px;
-    padding: 10px;
-    border-radius: 5px;
-    width: 30%;
-    border: 3px black solid;
-    font-family: inherit;
-    font-size: inherit;
-}
-
 .lyrics-section {
     margin-top: 50px;
-}
-
-.song-title {
-    font-size: 40px;
-    line-height: 45px;
 }
 
 .modal {
@@ -83,15 +91,16 @@ input {
     position: fixed;
 }
 
-.modal pre {
-    text-align: left;
-}
+/* Buttons */
 
-.modal > header, .modal > div {
-    max-width: 600px;
+.search-button {
+    display: block;
     margin: 0 auto;
-}
-
-.album-image {
-    width: 80%;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 30%;
+    border: 3px black solid;
+    font-family: inherit;
+    font-size: inherit;
 }
