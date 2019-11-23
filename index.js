@@ -1,3 +1,5 @@
+// Printing Functions
+
 function printLyrics(lyrics, artist, song) {
     $('.js-lyrics').html(`
     <button class="js-info-button info-button animated fadeInUp">&uarr; Learn More About This Song &uarr;</button>
@@ -15,6 +17,8 @@ function printInfo(info) {
     <p>Directed by: ${info.strMusicVidDirector}</p>
     `);
 }
+
+// Helper Functions
 
 function showInfo() {
     if ($('.js-modal').css("display") == 'none') {
@@ -45,6 +49,8 @@ function formatSearch(query) {
 function formatDataSearch(params) {
     return Object.keys(params).map(key => `${key.trim().replace(/ /g, '_').toLowerCase()}=${(params[key]).trim().replace(/ /g, '_').toLowerCase()}`).join('&');
 }
+
+// AJAX Calls
 
 function fetchLyrics(artist, song, callback) {
     const url = `https://api.lyrics.ovh/v1/${formatSearch(artist)}/${formatSearch(song)}`;
@@ -93,6 +99,8 @@ function fetchSongDetails(artist, song) {
             $('.js-info').html(`<button class="js-exit exit">X</button><p>Song details cannot be found at this time.</p>`);
         });
 }
+
+// Event listeners
 
 function handleInfoClick() {
     $('.lyrics-section').on('click', '.js-info-button', function (event) {
