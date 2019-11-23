@@ -27,6 +27,10 @@ h1, h2 {
     color: #8e44ad;
 }
 
+button {
+    background-color: white;
+}
+
 /* Main styles */
 
 .song-title {

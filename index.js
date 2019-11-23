@@ -69,7 +69,7 @@ function fetchLyrics(artist, song, callback) {
             callback();
         })
         .catch(error => {
-            $('.js-lyrics').html(`<p>The lyrics for this song cannot be found at this time. Please try again later or check your spelling</p>`);
+            $('.js-lyrics').html(`<p>The lyrics for this song cannot be found at this time. Please try again later or check your spelling.</p>`);
             callback();
         });
 }
