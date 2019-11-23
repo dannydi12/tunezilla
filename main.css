@@ -14,6 +14,7 @@ main {
     background: url('images/pattern.svg');
     height: 100vh;
     padding: 35px;
+    border-bottom: 3px solid #8e44ad;
 }
 
 h1, h2 {
@@ -67,19 +68,28 @@ main > * {
     background-color: white;
 }
 
+.video {
+    height: 340px;
+    width: 100%;
+    max-width: 560px;
+}
+
+form {
+    border: 3px black solid;
+    padding: 50px;
+    border-radius: 5px;
+}
+
 /* Sections */
 
 .search-section {
     margin-top: 20px;
-    border: 3px black solid;
-    padding: 50px;
-    border-radius: 5px;
     width: 100%;
     max-width: 700px;
+    background-color: white;
 }
 
 .lyrics-section {
-    margin-top: 50px;
     padding: 35px;
 }
 
@@ -96,12 +106,6 @@ main > * {
     padding: 35px;
     position: fixed;
     padding: 35px;
-}
-
-.video {
-    height: 340px;
-    width: 100%;
-    max-width: 560px;
 }
 
 /* Buttons */
