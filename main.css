@@ -25,7 +25,6 @@ h1, h2 {
     font-size: 70px;
 }
 
-
 /* Main styles */
 
 .song-title {
@@ -47,6 +46,7 @@ input {
     font-size: inherit;
     border: 3px black solid;
     margin-top: 10px;
+    width: 100%;
 }
 
 .modal pre {
@@ -105,7 +105,6 @@ input {
     margin-top: 20px;
     padding: 10px;
     border-radius: 5px;
-    width: 30%;
     border: 3px black solid;
     font-family: inherit;
     font-size: inherit;
@@ -131,4 +130,14 @@ input {
     font-family: inherit;
     margin-right: 0px;
     margin-left: auto;
+}
+
+@media (min-width: 500px) {
+    .search-button {
+        width: 30%;
+    }
+
+    input {
+        width: auto;
+    }
 }
