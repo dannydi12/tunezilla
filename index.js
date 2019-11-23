@@ -1,5 +1,8 @@
 function printLyrics(lyrics, artist, song) {
-    $('.js-lyrics').html(`<h2 class="song-title">${song} by ${artist}</h2><pre>${lyrics.lyrics}</pre>`);
+    $('.js-lyrics').html(`
+    <button class="js-info-button info-button"></button>
+    <h2 class="song-title">${song} by ${artist}</h2><pre>${lyrics.lyrics}</pre>
+    `);
 }
 
 function printInfo(info) {
@@ -17,10 +20,11 @@ function printInfo(info) {
 function showInfo() {
     if ($('.js-modal').css("display") == 'none') {
         $('.js-modal').css('display', 'block');
-        $('.js-modal').css('position', 'fixed');
+        $('body').css('overflow', 'hidden')
     }
     else {
         $('.js-modal').css('display', 'none');
+        $('body').css('overflow', 'auto')
     }
 }
 
@@ -92,7 +96,7 @@ function fetchSongDetails(artist, song) {
 }
 
 function handleInfoClick() {
-    $('.js-info-button').on('click', function (event) {
+    $('.lyrics-section').on('click', '.js-info-button', function (event) {
         event.preventDefault();
         showInfo();
     });
