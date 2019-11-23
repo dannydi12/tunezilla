@@ -51,6 +51,11 @@ input {
     width: 100%;
 }
 
+input:focus {
+    border: 3px #8e44ad solid;
+    outline: none;
+}
+
 .modal pre {
     text-align: left;
 }
@@ -140,6 +145,10 @@ form {
     font-size: inherit;
     font-family: inherit;
     cursor: pointer;
+}
+
+.info-button:hover {
+    background-color: #7f3d9b;
 }
 
 .exit-button {
