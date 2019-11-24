@@ -96,7 +96,7 @@ function fetchSongDetails(artist, song) {
             printInfo(jsonInfo.track[0]);
         })
         .catch(error => {
-            $('.js-info').html(`<button class="js-exit exit">X</button><p>Song details cannot be found at this time.</p>`);
+            $('.js-info').html(`<p>Song details cannot be found at this time.</p>`);
         });
 }
 
