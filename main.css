@@ -11,7 +11,8 @@ main {
     display: flex;
     align-items: center;
     flex-direction: column;
-    background: url('images/pattern.svg');
+    background-image: url('images/pattern.svg');
+    background-size: contain;
     height: 100vh;
     padding: 35px;
     border-bottom: 3px solid #8e44ad;
@@ -173,5 +174,9 @@ form {
 
     input {
         width: auto;
+    }
+
+    main {
+        background-size: auto;
     }
 }
