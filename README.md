@@ -8,7 +8,7 @@ We wanted a website that can easily serve our favorite songs to sing and shout w
 
 ## Recommended Usage
 
-Due to the limitations of some API's available, some results may vary based on the song inputted. For example, it is a known issue that there may not be any available background information on some newer or lesser-known songs. For testing purposes, we recommend you test our web app with Justin Bieber's "Love Yourself."
+Due to the limitations of some API's available, some results may vary based on the song inputted. For example, it is a known issue that there may not be any available background information on some newer or lesser-known songs. **For testing purposes, we recommend you test our web app with Justin Bieber's "Love Yourself."**
 
 ## Screenshots
 Landing Page:
